@@ -1,0 +1,31 @@
+.form-size {
+
+    max-width: 640px;
+    margin: 20px auto;
+
+    background-color: #dce6f7;
+
+    padding: 20px;
+
+    border: 1px solid #D5D5D5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+.sked-day {
+    padding: 5px;
+    background-color: #dce6f7;
+    border: 1px solid #D5D5D5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.sked-item {
+    border: 1px solid #D5D5D5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}

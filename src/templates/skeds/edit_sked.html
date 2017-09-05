@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="page-header">
+        <h1>Edit Sked</h1>
+    </div>
+    <div class="form-size">
+        <form method="post">
+            <div class="form-group">
+                <label for="name"><h4>Sked Name</h4></label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Algebra II" value="{{ sked.name }}" aria-describedby="name-block">
+                <p id="name-block" class="help-block">Enter the name of the sked.  Example: Period 1 - Algebra II</p>
+            </div>
+            <div class="form-group">
+                <label for="day"><h4>Day</h4></label>
+                <input type="text" class="form-control" id="day" name="day" placeholder="Monday" value="{{ sked.day }}" aria-describedby="day-block">
+                <p id="day-block" class="help-block">Enter the day of the week</p>
+            </div>
+            <div class="form-group">
+                <label for="time"><h4>Time</h4></label>
+                <div class="input-group bootstrap-timepicker timepicker">
+                    <input id="time" name="time" type="text" class="form-control input-small" value="{{ sked.time }}" aria-describedby="time-block">
+                </div>
+                <p id="time-block" class="help-block">Enter the time that the sked begins</p>
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a class="btn btn-danger" href="{{ url_for('skeds.delete_sked', sked_id=sked._id) }}" role="button">Delete</a>
+        </form>
+    </div>
+        <script>
+            $('#time').timepicker();
+        </script>
+{% endblock %}

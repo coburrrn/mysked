@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="page-header">
+        <h1>Sked<small> - For {{ user_name }}</small>
+            <a class="btn btn-success" href="{{ url_for('skeds.add_sked') }}">Add Sked</a>
+        </h1>
+    </div>
+    <div>
+        {% if skeds is not none %}
+        <div class="list-group sked-day">
+            <a href="#sunday" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Sunday</h5></a>
+                <div id="sunday" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "sunday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        <div class="list-group sked-day">
+            <a href="#monday" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Monday</h5></a>
+                <div id="monday" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "monday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        <div class="list-group sked-day">
+            <a href="#tuesday" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Tuesday</h5></a>
+                <div id="tuesday" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "tuesday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        <div class="list-group sked-day">
+            <a href="#wed" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Wednesday</h5></a>
+                <div id="wed" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "wednesday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        <div class="list-group sked-day">
+            <a href="#thurs" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Thursday</h5></a>
+                <div id="thurs" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "thursday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        <div class="list-group sked-day">
+            <a href="#fri" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Friday</h5></a>
+                <div id="fri" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "friday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        <div class="list-group sked-day">
+            <a href="#sat" data-toggle="collapse" class="list-group-item list-group-item-action list-group-item-success"><h5>Saturday</h5></a>
+                <div id="sat" class="collapse-in">
+                {% for sked in skeds if sked.day.lower() == "saturday" %}
+                    <a href="{{ url_for('skeds.edit_sked', sked_id=sked._id) }}" class="sked-item list-group-item list-group-item-action list-group-item-primary">
+                        {{ sked.time }}: {{ sked.name }}
+                    </a>
+                {% endfor %}
+                </div>
+        </div>
+        {% else %}
+            <p class="list-group-item">No Sked found</p>
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}
